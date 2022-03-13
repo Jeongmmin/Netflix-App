@@ -7,7 +7,7 @@ import styled from 'styled-components';
 export default function Banner() {
 
     const [movie, setMovie] = useState([]);
-    const [isClicked, setisClicked] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
     
     useEffect(() => {
         fetchData();
@@ -52,7 +52,7 @@ export default function Banner() {
                 </h1>
     
                 <div className="banner__buttons">
-                    <button className="banner__button play" onClick={() => setisClicked(true)}>
+                    <button className="banner__button play" onClick={() => setIsClicked(true)}>
                         Play
                     </button>
                     <button className="banner__button info">
@@ -72,16 +72,16 @@ export default function Banner() {
         return (
             <Container>
                 <HomeContainer>
+                {/* key가 없을 때 에러를 방지하기 위해서 src에 movie.videos.results[0] && 구문 추가함 -> 추가 후 동영상 없을 때 안내문구 나옴*/}
                     <Iframe
                         width="640"
                         height="360"
-                        src={`https://www.youtube.com/embed/${movie.videos.results[0].key}?controls=0&autoplay=1&loop=1&mute=1&playlist=${movie.videos.results[0].key}`}
+                        src={`https://www.youtube.com/embed/${movie.videos.results[0] && movie.videos.results[0].key}?controls=0&autoplay=1&loop=1&mute=1&playlist=${movie.videos.results[0] && movie.videos.results[0].key}`}
                         title="YouTube video player"
                         frameborder="0"
                         allow="autoplay; fullscreen"
                         allowfullscreen
                     >
-
                     </Iframe>
                 </HomeContainer>
             </Container>

@@ -2,14 +2,14 @@ import React , { useState, useEffect } from 'react'
 import  "./Nav.css"
 
 export default function Nav() {
-const [show, handleshow] = useState(false);
+const [show, handleShow] = useState(false);
 
 useEffect(() => {
     window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
-            handleshow(true);
+            handleShow(true);
         } else {
-            handleshow(false);
+            handleShow(false);
         }
     });
     return () => {

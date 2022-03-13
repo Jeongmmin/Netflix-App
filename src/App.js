@@ -3,6 +3,7 @@ import Nav from './components/Nav';
 import Banner from './components/Banner';
 import Row from './components/Row';
 import requests from './api/requests';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         id="MT"
         fetchUrl={requests.fetchMystery}
       />
+      <Footer/>
     </div>
   );
 }
