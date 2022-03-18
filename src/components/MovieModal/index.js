@@ -11,7 +11,7 @@ function MovieModal({
     release_date,
     first_air_date,
     vote_average,
-    setModalOpen
+    setModalOpen,
 }) {
 
     const BASE_URL = "https://image.tmdb.org/t/p/original";
@@ -19,6 +19,7 @@ function MovieModal({
     return (
         <div className="presentation">
             <div className="wrapper-modal">
+                    
                 <div className="modal">
                     <span onClick={() => setModalOpen(false)} className="modal-close">
                         ✖
@@ -42,7 +43,7 @@ function MovieModal({
                         <p className="modal__overview"> {overview} </p>
                     </div>
                 </div>
-            </div>
+                </div>
         </div>
     )
 }

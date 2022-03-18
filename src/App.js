@@ -1,54 +1,40 @@
 import './App.css';
 import Nav from './components/Nav';
-import Banner from './components/Banner';
-import Row from './components/Row';
-import requests from './api/requests';
 import Footer from './components/Footer';
+import { Outlet, Route, Routes } from 'react-router-dom';
+import MainPage from './Pages/MainPage';
+import DetailPage from './Pages/DetailPage';
+import SearchPage from './Pages/SearchPage';
+
+// 라우팅을 위한 파일로 만들기
+const Layout = () => {
+  return (
+    <div>
+      <Nav />
+
+
+      <Outlet />
+
+
+      <Footer />
+
+    </div>
+  )
+}
 
 function App() {
   return (
     <div className="App">
-      <Nav/>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MainPage />}/>
+          <Route path=':movieId' element={<DetailPage />}/>
+          <Route path='search' element={<SearchPage />}/>
 
-      <Banner />
-
-      <Row
-        title="NETFLIX ORIGINALS"
-        id="NO"
-        fetchUrl={requests.fetchNetflixOriginals}
-        isLargeRow
-      />
-      <Row
-        title="Trending Now"
-        id="TN"
-        fetchUrl={requests.fetchTrending}
-      />
-      <Row
-        title="Top Rated"
-        id="TR"
-        fetchUrl={requests.fetchTopRated}
-      />
-      <Row
-        title="Music"
-        id="MS"
-        fetchUrl={requests.fetchMusic}
-      />
-      <Row
-        title="Romance Movies"
-        id="RM"
-        fetchUrl={requests.fetchRomanceMovies}
-      />
-      <Row
-        title="Action Movies"
-        id="AM"
-        fetchUrl={requests.fetchActionMovies}
-      />
-      <Row
-        title="Mistery"
-        id="MT"
-        fetchUrl={requests.fetchMystery}
-      />
-      <Footer/>
+        </Route>
+      </Routes>
+      
+      
     </div>
   );
 }
