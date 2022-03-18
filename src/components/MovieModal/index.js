@@ -1,3 +1,4 @@
+// 원래코드
 // rfce
 import React from 'react'
 import "./MovieModal.css"
@@ -17,10 +18,10 @@ function MovieModal({
     const BASE_URL = "https://image.tmdb.org/t/p/original";
 
     return (
-        <div className="presentation">
-            <div className="wrapper-modal">
+        <div className="presentation"  onClick={() => setModalOpen(false)} >
+            <div className="wrapper-modal" >
                     
-                <div className="modal">
+                <div className="modal" onClick={(e) =>e.stopPropagation()}>
                     <span onClick={() => setModalOpen(false)} className="modal-close">
                         ✖
                     </span>
