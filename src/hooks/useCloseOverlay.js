@@ -1,11 +1,6 @@
 import  { useEffect} from 'react';
 
 export const useCloseOverlay = (ref, handler) => {
-
-    // const [isOpen, setOpen] = useState(false);
-    
-    // const domNode = useRef();
-    
     
     useEffect(() => {
         const handleClickOutside = (event) => {
