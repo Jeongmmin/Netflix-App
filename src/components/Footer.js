@@ -65,6 +65,7 @@ const FooterContainer = styledComponents.div`
     width: 100%;
     position: relative;
     z-index: 100;
+    margin-top: 60px;
 
     @media (max-width: 768px) {
         padding: 20px 20px;
