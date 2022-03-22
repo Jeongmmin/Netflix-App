@@ -25,7 +25,7 @@ const Layout = () => {
 function App() {
   return (
     <div className="App">
-        <Routes basename={process.env.PUBLIC_URL}>
+        <Routes>
           <Route path="/" element={<Layout />} >
             <Route index element={<MainPage />}/>
             <Route path=':movieId' element={<DetailPage />}/>
