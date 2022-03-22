@@ -34,7 +34,7 @@ const handleChange= (e) => {
             alt="Netflix logo" 
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/300px-Netflix_2015_logo.svg.png"
             className='nav__logo'
-            onClick={() => (window.location.href = "/")}
+            onClick={() => (window.location.href = "/Netflix-App/")}
             />
 
             <input 
