@@ -39,6 +39,10 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
     setMovieSelected(movie);
   }
 
+  const truncate = (str, n) => {
+    return str?.length > n ? str.substr(0, n-1) + "..." : str;
+  };
+
   // const swiper = new Swiper('.swiper', {
   //   // Optional parameters
   //   direction: 'vertical',
@@ -102,7 +106,7 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
                 alt="{movie.name}"
                 onClick={() =>handleClick(movie)}
               />
-              <div className="titleOfMovie" >{movie.title ? movie.title: movie.name}</div>
+              <div className="titleOfMovie" >{truncate((movie.title ? movie.title: movie.name), 14)}</div>
             </div>
           </SwiperSlide>
             ))}
