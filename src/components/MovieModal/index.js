@@ -1,7 +1,10 @@
 // 원래코드
 // rfce
-import React from 'react'
-import "./MovieModal.css"
+import React, { useRef } from 'react';
+
+// closeOverlay hooks 추가
+import { useCloseOverlay } from '../../hooks/useCloseOverlay';
+import "./MovieModal.css";
 
 // props 가져오기
 function MovieModal({
@@ -17,12 +20,16 @@ function MovieModal({
 
     const BASE_URL = "https://image.tmdb.org/t/p/original";
 
+    const ref = useRef(null);
+
+    useCloseOverlay(ref, () => setModalOpen(false));
+
     return (
-        <div className="presentation"  onClick={() => setModalOpen(false)} >
+        <div className="presentation" >
             <div className="wrapper-modal" >
                     
-                <div className="modal" onClick={(e) =>e.stopPropagation()}>
-                    <span onClick={() => setModalOpen(false)} className="modal-close">
+                <div className="modal" ref={ref} >
+                    <span onClick={() => setModalOpen(false) } className="modal-close">
                         ✖
                     </span>
                     <img 

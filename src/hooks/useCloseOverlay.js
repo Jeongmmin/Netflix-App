@@ -1,27 +1,28 @@
-// import React, { useEffect } from 'react'
+import  { useEffect} from 'react';
 
-// export default function useCloseOverlay() {
+export const useCloseOverlay = (ref, handler) => {
 
-//     const modalEl = useRef(); // 
-//     const [isOpen, setOpen] = useState(false);
+    // const [isOpen, setOpen] = useState(false);
+    
+    // const domNode = useRef();
+    
+    
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const el = ref?.current;
+            if (!el || el.contains(event.target)) {
 
-//     const handleClickOutside = ({ target }) => {
-//         if (isOpen && !modalEl.current.contains(target)) setOpen(false);
-//         };
+                return;
+            }
+            handler(event);
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+        }, [ref, handler]);
 
 
-//     useEffect(() => {
-//         window.addEventListener("click", handleClickOutside);
-//         return () => {
-//             window.removeEventListener("click", handleClickOutside);
-//         };
-//         }, []);
-
-//     return (
-//         {
-//             // isOpen && 
-//             <Modal ref={modalEl}>
-//             </Modal>
-//         }
-//     );
-// }
+}

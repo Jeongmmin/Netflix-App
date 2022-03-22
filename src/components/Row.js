@@ -20,7 +20,8 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
 
   const [movies, setMovies] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
-  const [movieSelected, setMovieSelected] = useState({})
+  const [movieSelected, setMovieSelected] = useState({});
+
 
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
 
   const fetchMovieData = async () => {
     const request = await axios.get(fetchUrl);
-    console.log(request);
+    // console.log(request);
     setMovies(request.data.results);
   };
 
@@ -82,11 +83,11 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
         
       >
           <div className="slider__arrow-left">
-            <span className="arrow" onClick={() => {
+            {/* <span className="arrow" onClick={() => {
 							document.getElementById(id).scrollLeft -= window.innerWidth - 80;
-						}}>{"<"}</span>
+						}}>{"<"}</span> */}
+          <div className="swiper-button-prev">{"<"}</div>
           </div>
-          <div class="swiper-button-prev"></div>
             {/**SEVERAL ROWS__POSTER */}
             {movies.map((movie) => (
           <SwiperSlide id={id} className="swiper-slide">
@@ -101,7 +102,7 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
                 alt="{movie.name}"
                 onClick={() =>handleClick(movie)}
               />
-              <div className="titleOfMovie">{movie.title}</div>
+              <div className="titleOfMovie" >{movie.title ? movie.title: movie.name}</div>
             </div>
           </SwiperSlide>
             ))}
@@ -112,17 +113,18 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
 							{">"}
 						</span>
 					</div>
-          <div class="swiper-button-next"></div>
 					</Swiper>
         </div>
             {/*modal이 열리면 MovieModal이 열린다. */}
             {
               modalOpen && (
                 // movie 정보를 넣어줌
-                  <MovieModal {...movieSelected} setModalOpen={setModalOpen}/>
+                  <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
                 )   
             }
 
       </section>
   );
+
 }
+

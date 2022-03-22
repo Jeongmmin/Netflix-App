@@ -19,7 +19,7 @@ export default function SearchPage() {
     
     let query = useQuery();
 
-    const searchTerm = query.get("q");
+    // const searchTerm = query.get("q");
     const debounceSearchTerm = useDebounce(query.get("q"), 500);
     
     // searchTerm이 바뀔 때마다 새로 영화 데이터 가져오기
