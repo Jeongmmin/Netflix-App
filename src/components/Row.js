@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { FreeMode } from "swiper";
+import { Navigation } from "swiper";
 
 
 
@@ -43,32 +44,6 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
     return str?.length > n ? str.substr(0, n-1) + "..." : str;
   };
 
-  // const swiper = new Swiper('.swiper', {
-  //   // Optional parameters
-  //   direction: 'vertical',
-  //   loop: true,
-  
-  //   // If we need pagination
-  //   pagination: {
-  //     el: '.swiper-pagination',
-  //   },
-  
-  //   // Navigation arrows
-  //   navigation: {
-  //     nextEl: '.swiper-button-next',
-  //     prevEl: '.swiper-button-prev',
-  //   },
-  
-  //   // And if we need scrollbar
-  //   scrollbar: {
-  //     el: '.swiper-scrollbar',
-  //   },
-  // });
-
-//   const swiper = document.querySelector('.swiper').swiper;
-
-// // Now you can use all slider methods like
-// swiper.slideNext();
 
   return (
       <section className="row ">
@@ -76,13 +51,32 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
 				<h2>{title}</h2>
         <div className="slider">
         <Swiper
-        slidesPerView={5}
-        spaceBetween={30}
+        loop={true} // loop 기능을 사용할 것인지
+        breakpoints={{
+          1378: {
+            slidesPerView: 8, // 한번에 보이는 슬라이드 개수
+            // slidesPerGroup: 6, // 몇개씩 슬라이드 할지
+          },
+          998: {
+            slidesPerView: 5,
+            // slidesPerGroup: 5,
+          },
+          625: {
+            slidesPerView: 4,
+            // slidesPerGroup: 4,
+          },
+          0: {
+            slidesPerView: 3,
+            // slidesPerGroup: 3,
+          }
+        }}
+        spaceBetween={20}
         freeMode={true}
         pagination={{
           clickable: true,
         }}
-        modules={[FreeMode]}
+        modules={[FreeMode, Navigation]}
+        navigation
         className="mySwiper"
         
       >
