@@ -41,8 +41,8 @@
     position: fixed;
     left: 50%;
     transform: translate(-50%, 0);
-    background-color: rgba(0, 0, 0, 0.582);
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
     color: white;
     padding: 8px;
     border: none;
