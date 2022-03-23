@@ -1,17 +1,35 @@
 import axios from "../api/axios";
 import React, { useEffect, useState } from "react";
+import MovieModal from './MovieModal';
 import requests from "../api/requests";
 import "./Banner.css";
 import styled from 'styled-components';
 
-export default function Banner() {
+export default function Banner( { fetchUrl }) {
 
     const [movie, setMovie] = useState([]);
     const [isClicked, setIsClicked] = useState(false);
+
+    const [movies, setMovies] = useState([]);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [movieSelected, setMovieSelected] = useState({});
+    // const BASE_URL = "https://image.tmdb.org/t/p/original";
     
     useEffect(() => {
         fetchData();
+        fetchMovieData();
     }, []);
+
+    const fetchMovieData = async () => {
+        const request = await axios.get(fetchUrl);
+        console.log(request);
+        setMovies(request.data.results);
+    };
+    
+    const handleClick = (movie) => {
+    setModalOpen(true);
+    setMovieSelected(movie);
+    }
 
     const fetchData = async () => {
         // 현재 상영중인 영화 정보를 가져오기(여러 영화)
@@ -55,9 +73,17 @@ export default function Banner() {
                     <button className="banner__button play" onClick={() => setIsClicked(true)}>
                     🎬 재생
                     </button>
-                    <button className="banner__button info">
-                        <div className="space"></div> 📍 상세 정보
+                    <button className="banner__button info" onClick={() =>handleClick(movie)} key={movie.id}>
+                        {/* <div className="space"></div> 📍 상세 정보 */}
+                        📍 상세 정보
                     </button>
+                    {/*modal이 열리면 MovieModal이 열린다. */}
+                    {
+                    modalOpen && (
+                        // movie 정보를 넣어줌
+                        <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
+                        )   
+                    }
                 </div>
     
                 <h1 className="banner__description">
