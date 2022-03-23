@@ -42,7 +42,7 @@ const handleChange= (e) => {
                 onChange={handleChange}
                 className="nav__input"
                 type="text"
-                placeholder='영화를 검색해 주세요'
+                placeholder='영화를 검색해 주세요 👀'
             />
 
             <img 

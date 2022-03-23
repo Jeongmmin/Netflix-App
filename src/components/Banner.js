@@ -41,7 +41,7 @@ export default function Banner() {
             <header
             className="banner"
             style={{
-                backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`,
+                backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path && movie.backdrop_path }")`,
                 backgroundPosition: "top center",
                 backgroundSize: "cover",
                 }}
@@ -53,10 +53,10 @@ export default function Banner() {
     
                 <div className="banner__buttons">
                     <button className="banner__button play" onClick={() => setIsClicked(true)}>
-                        Play
+                    🎬 재생
                     </button>
                     <button className="banner__button info">
-                        <div className="space"></div> More Information
+                        <div className="space"></div> 📍 상세 정보
                     </button>
                 </div>
     
