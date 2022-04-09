@@ -31,14 +31,12 @@
 <br/>
 <br/>
 <p align="center">
-<img src="https://img.shields.io/badge/Styled Component-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/> &nbsp 
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"/> &nbsp
-<img src="https://img.shields.io/badge/React hook-61DAFB?style=for-the-badge&logo=React&logoColor=white"/> &nbsp
-<br/>
-<br/>
-<img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=React Router&logoColor=white"/> &nbsp 
-<img src="https://img.shields.io/badge/Swiper-6332F6?style=for-the-badge&logo=Swiper&logoColor=white"/> &nbsp
-<img src="https://img.shields.io/badge/The Movie Database-111111?style=for-the-badge&logo=The Movie Database&logoColor=01B4E4"/> &nbsp
+<img src="https://img.shields.io/badge/Styled Component-DB7093?style=flat-square&logo=styled-components&logoColor=white"/> &nbsp 
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> &nbsp
+<img src="https://img.shields.io/badge/React hook-61DAFB?style=flat-square&logo=React&logoColor=white"/> &nbsp
+<img src="https://img.shields.io/badge/React Router-CA4245?style=flat-square&logo=React Router&logoColor=white"/> &nbsp 
+<img src="https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=Swiper&logoColor=white"/> &nbsp
+<img src="https://img.shields.io/badge/The Movie Database-111111?style=flat-square&logo=The Movie Database&logoColor=01B4E4"/> &nbsp
 <br/>
 <br/>
 <p align="center">
