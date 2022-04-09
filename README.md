@@ -15,8 +15,10 @@
     
 💡 사이트 이동하기 💡  
   
+<a href="https://jeongmmin.github.io/bit-ghost/" target="_blank"><img src="https://img.shields.io/badge/ Netflix 앱-black?style=flat-square&logo=Netflix&logoColor=E50914"/></a>
+<br/>    
 
-[🔗 넷플릭스 앱](https://jeongmmin.github.io/Netflix-App/)
+<!-- [🔗 넷플릭스 앱](https://jeongmmin.github.io/Netflix-App/) -->
   
  
 (ctrl + click 시 새창으로 열기)
