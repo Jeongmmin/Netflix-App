@@ -10,7 +10,7 @@ export default function Banner( { fetchUrl }) {
     const [movie, setMovie] = useState([]);
     const [isClicked, setIsClicked] = useState(false);
 
-    const [movies, setMovies] = useState([]);
+    const setMovies = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [movieSelected, setMovieSelected] = useState({});
     // const BASE_URL = "https://image.tmdb.org/t/p/original";
