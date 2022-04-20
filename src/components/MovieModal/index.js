@@ -5,7 +5,7 @@ import React, { useRef } from "react";
 import { useCloseOverlay } from "../../hooks/useCloseOverlay";
 import "./MovieModal.css";
 
-const MatchScore = Math.floor(Math.random()*100);
+// const MatchScore = Math.floor(Math.random()*100);
 
 // props 가져오기
 function MovieModal({
@@ -39,7 +39,7 @@ function MovieModal({
 
           <div className="modal__content">
             <p className="modal__details">
-              <span className="modal__user-perc">{`${MatchScore}% 일치`}</span>&nbsp;&nbsp;
+              <span className="modal__user-perc">{`${Math.floor(Math.random()*100)}% 일치`}</span>&nbsp;&nbsp;
               {release_date ? release_date : first_air_date}
             </p>
 
