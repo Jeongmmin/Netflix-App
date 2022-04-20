@@ -50,19 +50,19 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
           breakpoints={{
             1378: {
               slidesPerView: 8, // 한번에 보이는 슬라이드 개수
-              // slidesPerGroup: 8, // 몇개씩 슬라이드 할지
+              slidesPerGroup: 8, // 몇개씩 슬라이드 할지
             },
             998: {
               slidesPerView: 5,
-              // slidesPerGroup: 5,
+              slidesPerGroup: 5,
             },
-            625: {
+            768: {
               slidesPerView: 4,
-              // slidesPerGroup: 4,
+              slidesPerGroup: 4,
             },
             0: {
               slidesPerView: 3,
-              // slidesPerGroup: 3,
+              slidesPerGroup: 3,
             },
           }}
           spaceBetween={20}

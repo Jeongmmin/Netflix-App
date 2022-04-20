@@ -2,9 +2,8 @@ body {
   background-color: #141414;
 }
 .row {
-  margin-left: 20px;
   color: white;
-  margin-top: 50px;
+  margin: 50px 20px;
 }
 
 h2 {
