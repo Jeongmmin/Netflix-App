@@ -6,7 +6,7 @@ import styled from "styled-components";
 const NavWrapper = styled.div`
   display: flex;
   top: 0;
-  height: 6vh;
+  height: 50px;
   padding: 0.5em 2em;
   position: fixed;
   width: 100%;
@@ -19,7 +19,8 @@ const NavWrapper = styled.div`
   background-color: ${(props) => (props.show ? "black" : "none")};
 
   @media (max-width: 768px) {
-    padding: 1em;;
+    padding: 1em;
+    height: 60px;
   }
 `;
 
@@ -38,13 +39,12 @@ const Logo = styled.div`
   @media (max-width: 768px) {
     background-image: url("https://pngimg.com/uploads/netflix/netflix_PNG15.png");
     height: 35px;
-    }
+  }
 `;
 
 const MenuWrapper = styled.div`
   /* width: 500px; */
   display: flex;
-  /* flex-direction: row; */
   align-items: center;
 `;
 
@@ -57,26 +57,29 @@ const Avatar = styled.div`
   @media (max-width: 768px) {
     width: 45px;
     height: 45px;
-    }
+  }
 `;
 
 const SearchInput = styled.input`
   background-color: rgba(0, 0, 0, 0);
   border: none;
   padding: 4px;
-  margin-right: 20px;
-  width: 24px;
-  font-size: 20px;
+  margin-right: 5px;
+  width: 28px;
+  font-size: 16px;
   cursor: pointer;
+  transition: 0.5s all ease-in;
+  /* :before {
+    content: "👀";
+  } */
   :focus {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     color: white;
     width: auto;
     border: none;
-    font-size: 14px;
-    /* text-align: center; */
-  };
+    outline: none;
+  }
 `;
 
 export default function Nav() {
@@ -109,7 +112,12 @@ export default function Nav() {
     <NavWrapper show={show}>
       <Logo onClick={() => (window.location.href = "/Netflix-App/")} />
       <MenuWrapper>
-        <SearchInput type="text" value={searchValue} onChange={handleChange} placeholder="👀 영화를 검색해 주세요"></SearchInput>
+        <SearchInput
+          type="text"
+          value={searchValue}
+          onChange={handleChange}
+          placeholder="👀 영화를 검색해 주세요"
+        ></SearchInput>
         <Avatar />
       </MenuWrapper>
     </NavWrapper>

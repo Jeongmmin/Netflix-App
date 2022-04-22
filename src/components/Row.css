@@ -2,12 +2,8 @@ body {
   background-color: #141414;
 }
 .row {
-  color: white;
-  margin: 50px 20px;
-}
-
-h2 {
-  padding-left: 20px;
+  color: rgb(232, 232, 232);
+  margin: 4em 2em;
 }
 
 .swiper-wrapper {
@@ -216,9 +212,12 @@ h2 {
   .row__posterLarge {
     max-height: 360px;
   }
-}
+}*/
 
 @media screen and (max-width: 768px) {
+  .row {
+    margin: 2em 1em;
+  }
   .row__poster {
     max-height: 100px;
   }
@@ -229,4 +228,4 @@ h2 {
   .titleOfMovie {
     font-size: 10px;
   }
-} */
+}
