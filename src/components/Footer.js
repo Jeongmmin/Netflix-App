@@ -1,10 +1,9 @@
 import React from "react";
-import styledComponents from "styled-components";
+import styled from "styled-components";
 
 export default function Footer() {
     return (
         <FooterContainer>
-        <FooterContent>
             <FooterLinkContainer>
             <FooterLinkTitle>넷플릭스 대한민국</FooterLinkTitle>
             <FooterLinkContent>
@@ -46,21 +45,18 @@ export default function Footer() {
                 </FooterLink>
             </FooterLinkContent>
             <FooterDescContainer>
-                <FooterDescRights>ⓒ Netflix Rights Reserved.</FooterDescRights>
+                <h2>ⓒ Netflix Rights Reserved.</h2>
             </FooterDescContainer>
             </FooterLinkContainer>
-        </FooterContent>
         </FooterContainer>
     );
 }
 
-const FooterContainer = styledComponents.div`
+const FooterContainer = styled.div`
     display: flex;
-    // 가운데 정렬
     justify-content: center;
-    // 상, 하 중앙정렬
     align-items: center;
-    padding: 40px, 0;
+    padding: 40px 0;
     border-top: 1px solid rgb(25, 25, 25);
     width: 100%;
     position: relative;
@@ -68,38 +64,41 @@ const FooterContainer = styledComponents.div`
     margin-top: 60px;
 
     @media (max-width: 768px) {
-        padding: 20px 20px;
-        padding-bottom: 30px;
+        padding: 10px 0;
     }
 `;
 
-const FooterContent = styledComponents.div``;
 
-const FooterLinkContainer = styledComponents.div`
+const FooterLinkContainer = styled.div`
+    text-align:center;
     width: 500px;
 
     @media (max-width:768px) {
+        margin: 0 auto;
         width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
     }
 `;
 
-const FooterLinkTitle = styledComponents.div`
+const FooterLinkTitle = styled.div`
     color: gray;
-    font-size: 17px
+    font-size: 17px;
 `;
 
-const FooterLinkContent = styledComponents.div`
+const FooterLinkContent = styled.div`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 35px;
+    margin: 35px auto;
 
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
         margin-top: 26px;
+
     }
 `;
 
-const FooterLink = styledComponents.a`
+const FooterLink = styled.a`
     color: gray;
     font-size: 14px;
     width: 110px;
@@ -116,16 +115,17 @@ const FooterLink = styledComponents.a`
     }
 `;
 
-const FooterDescContainer = styledComponents.div`
+const FooterDescContainer = styled.div`
     margin-top: 30px;
+    h2 {
+        color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 0;
+    }
 
     @media (min-width: 768px) {
         margin-top: 20px;
     }
 `;
 
-const FooterDescRights = styledComponents.h2`
-    color: white;
-    font-size: 14px;
-    text-align: center;
-`;

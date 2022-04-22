@@ -9,7 +9,7 @@ import SearchPage from './Pages/SearchPage';
 // 라우팅을 위한 파일로 만들기
 const Layout = () => {
   return (
-    <div>
+    <div className="wrapper">
       <Nav />
 
 
