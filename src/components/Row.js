@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // swiper style 추가
 import "swiper/css";
 import "swiper/css/free-mode";
-// import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
@@ -27,7 +26,6 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
 
   const fetchMovieData = async () => {
     const request = await axios.get(fetchUrl);
-    // console.log(request);
     setMovies(request.data.results);
   };
 
@@ -67,9 +65,6 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
           }}
           spaceBetween={20}
           freeMode={true}
-          // pagination={{
-          //   clickable: true,
-          // }}
           modules={[FreeMode, Navigation]}
           navigation
           className="mySwiper"
@@ -77,7 +72,7 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
           {movies.map((movie) => (
             movie.poster_path  | movie.backdrop_path !== null ?
             (
-            <SwiperSlide key={movie.id} id={id} className="swiper-slide">
+              <SwiperSlide key={movie.id} id={id} className="swiper-slide">
                 {/* {movie.poster_path | movie.backdrop_path !== null && */}
               <div>
                 
@@ -91,7 +86,7 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
                   alt="{movie.name}"
                   onClick={() => handleClick(movie)}
                   />
-                <div className="titleOfMovie">
+                <div className="title_of_movie">
                   {truncate(movie.title ? movie.title : movie.name, 14)}
                 </div>
               </div>
