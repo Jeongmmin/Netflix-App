@@ -1,74 +1,126 @@
-<!-- # Getting Started with Create React App
+# 📺 NetFlix-App
+  
+> **React**로 [NetFlix](https://www.netflix.com/)를 클론하여 만든 사이트입니다.<br/>
+**[The Movie Db Api](https://www.themoviedb.org/?language=ko) 데이터**를 **axios**통신을 이용해서 받아왔고, **React Router**를 통해 페이지를 변경할 수 있도록 설정했습니다.<br/>
+각 영화 목록은 **[Swiper](https://swiperjs.com/)** 를 이용하여 편리하게 볼 수 있도록 구현했습니다.<br/>
+또한 **React hook**을 사용하여 모달 Overlay 클릭시 창이 닫히는 기능과 keyup이벤트 지연시간 설정을 할 수 있도록 설정하여 다른 페이지에서도 사용할 수 있도록 만들었습니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<br/>
+<br/>
 
-In the project directory, you can run:
+## 📌 배포 사이트
+<div align="center">   
+<br/>
+    
+💡 사이트 이동하기 💡  
+  
+<a href="https://jeongmmin.github.io/Netflix-App/" target="_blank"><img src="https://img.shields.io/badge/ Netflix 앱-black?style=flat-square&logo=Netflix&logoColor=E50914"/></a>
+<br/>    
 
-### `npm start`
+<!-- [🔗 넷플릭스 앱](https://jeongmmin.github.io/Netflix-App/) -->
+  
+ 
+(ctrl + click 시 새창으로 열기)
+  
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📅 프로젝트 기간
+<br/>    
 
-### `npm test`
+> **2022.03.08 - 2022.03.22**
+<br/>
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📝 Skill & Preview
+<br/>
+<br/>
+<p align="center">
+<img src="https://img.shields.io/badge/Styled Component-DB7093?style=flat-square&logo=styled-components&logoColor=white"/> &nbsp 
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> &nbsp
+<img src="https://img.shields.io/badge/React hook-61DAFB?style=flat-square&logo=React&logoColor=white"/> &nbsp
+<img src="https://img.shields.io/badge/React Router-CA4245?style=flat-square&logo=React Router&logoColor=white"/> &nbsp 
+<img src="https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=Swiper&logoColor=white"/> &nbsp
+<img src="https://img.shields.io/badge/The Movie Database-111111?style=flat-square&logo=The Movie Database&logoColor=01B4E4"/> &nbsp
+<br/>
+<br/>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/82005305/161022447-836e5369-7bf3-4194-ae1c-ad68e6d9c560.gif">
+</p> 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<br/>
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ⚠ Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **앱 실행**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+"npm run start"
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### **배포**
 
-## Learn More
+```jsx
+"npm run build"
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### react-router-dom
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```jsx
+  "react-router-dom": "^6.2.2"
+```
 
-### Code Splitting
+### styled-components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```jsx
+"styled-components": "^5.3.3"
+```
 
-### Analyzing the Bundle Size
+### Swiper
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```jsx
+ "swiper": "^8.0.7"
+```
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+<br/>
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🔍 기능설명
 
-### Deployment
+### 1. Nav 창
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Netflix 로고 클릭 시 첫 화면으로 이동합니다.
+- 영화 검색 창에 영화 검색 시 검색 가능합니다.
+- 창이 스크롤 되면 navbar의 background 색상이 검정색으로 변화 됩니다.
 
-### `npm run build` fails to minify
+### 2. 배너창
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# Netflix-App"  -->
+- 현재 있기있는 영화의 정보가 랜덤으로 로드 됩니다.
+- Play 버튼 : 영화의 예고편이 재생됩니다.
+- 상세정보 버튼 : 영화의 제목, 상영 날짜, 평점, 이미지 등을 볼 수 있는 모달 창이 열립니다.
 
-## 배포주소입니다 👇
-[🔗 넷플릭스 앱 링크](https://jeongmmin.github.io/Netflix-App/)
+
+### 3. Main - 주제별 영화목록 보기
+
+- 최신인기, 시청률 높은 순서대로, 로맨스 영화, 액션 영화 등 카테고리 별로 영화 목록이 구성되어 있습니다.
+- 포스터를 옆으로 슬라이드 하면 원하는 만큼 슬라이드가 이동합니다. (Swiper 이용)
+
+### 4. Main - 영화 포스터 클릭시 모달창으로 이동
+
+- 포스터 클릭시 영화의 제목, 상영 날짜, 평점, 이미지 등을 볼 수 있습니다.
+- 모달창의 ✖ 버튼 또는 모달 창 밖을 클릭 시 모달창이 꺼집니다.
+ 
+### 5. Footer
+
+- 고객센터, 소개페이지, 문의하기 등 다양한 Netflix의 페이지로 이동하는 링크가 있습니다.
+
