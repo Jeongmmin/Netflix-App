@@ -34,7 +34,6 @@ export default function Banner( { fetchUrl }) {
     const fetchData = async () => {
         // 현재 상영중인 영화 정보를 가져오기(여러 영화)
         const request = await axios.get(requests.fetchNowPlaying);
-        // console.log(request);
 
         // 여러 영화 중 영화 하나의 ID를 가져오기
         const movieId 
@@ -53,7 +52,6 @@ export default function Banner( { fetchUrl }) {
         return str?.length > n ? str.substr(0, n-1) + "..." : str;
     };
 
-    // console.log('movie', movie);
     if(!isClicked) {
         return ( 
             <header
@@ -74,13 +72,10 @@ export default function Banner( { fetchUrl }) {
                     🎬 재생
                     </button>
                     <button className="banner__button info" onClick={() =>handleClick(movie)} key={movie.id}>
-                        {/* <div className="space"></div> 📍 상세 정보 */}
                         📍 상세 정보
                     </button>
-                    {/*modal이 열리면 MovieModal이 열린다. */}
                     {
                     modalOpen && (
-                        // movie 정보를 넣어줌
                         <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
                         )   
                     }
