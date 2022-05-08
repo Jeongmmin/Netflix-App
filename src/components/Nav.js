@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-// import "./Nav.css";
 
 const NavWrapper = styled.div`
   display: flex;
@@ -69,9 +68,6 @@ const SearchInput = styled.input`
   font-size: 16px;
   cursor: pointer;
   transition: 0.5s all ease-in;
-  /* :before {
-    content: "👀";
-  } */
   :focus {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
