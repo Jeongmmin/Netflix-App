@@ -23,6 +23,7 @@ body {
   background: url(".././img/left_arrow.png") no-repeat;
   background-size: 50% auto;
   background-position: center;
+  margin-top: calc(0px - (var(--swiper-navigation-size)*1.1));
   visibility: hidden;
 }
 
@@ -30,6 +31,7 @@ body {
   background: url(".././img/right_arrow.png") no-repeat;
   background-size: 50% auto;
   background-position: center;
+  margin-top: calc(0px - (var(--swiper-navigation-size)*1.1));
   visibility: hidden;
 }
 

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "../api/axios";
 import MovieModal from "./MovieModal";
-import "./Row.css";
 // swiper 추가
 import { Swiper, SwiperSlide } from "swiper/react";
 // swiper style 추가
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
+
+import "./Row.css";
 
 // import required modules
 import { FreeMode } from "swiper";
@@ -91,7 +92,7 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
                 </div>
               </div>
                 {/* } */}
-                {/* <div class="swiper-prev"></div> <div class="swiper-next"></div> */}
+                <div class="swiper-prev"></div> <div class="swiper-next"></div>
             </SwiperSlide>
             )
             : ''
