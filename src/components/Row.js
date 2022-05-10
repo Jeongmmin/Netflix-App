@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "../api/axios";
 import MovieModal from "./MovieModal";
-// swiper 추가
+
 import { Swiper, SwiperSlide } from "swiper/react";
-// swiper style 추가
+
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 
 import "./Row.css";
 
-// import required modules
 import { FreeMode } from "swiper";
 import { Navigation } from "swiper";
 
@@ -41,7 +40,6 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
 
   return (
     <section className="row ">
-      {/**TITLE*/}
       <h2>{title}</h2>
       <div className="slider">
         <Swiper
@@ -65,23 +63,24 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
           //   },
           // }}
           breakpoints= {{
-            // when window width is >= 320px
-            320: {
+            576: {
               slidesPerView: 2,
               spaceBetween: 20
             },
-            // when window width is >= 480px
-            480: {
-              slidesPerView: 3,
-              spaceBetween: 30
-            },
-            // when window width is >= 640px
-            640: {
-              slidesPerView: 4,
-              spaceBetween: 40
-            }
+            768: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+            992: {
+                  slidesPerView: 6,
+                  spaceBetween: 20,
+                },
+            1200: {
+                  slidesPerView: 8,
+                  spaceBetween: 20,
+                },
           }}
-          slidesPerView={8}
+          slidesPerGroup={4}
           spaceBetween={20}
           freeMode={true}
           modules={[FreeMode, Navigation]}
@@ -109,17 +108,15 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
                   {truncate(movie.title ? movie.title : movie.name, 14)}
                 </div>
               </div>
-                {/* } */}
-                <div class="swiper-prev"></div> <div class="swiper-next"></div>
+                  {/* }  */}
+                <div className="swiper-prev"></div> <div className="swiper-next"></div>
             </SwiperSlide>
             )
             : ''
           ))}
         </Swiper>
       </div>
-      {/*modal이 열리면 MovieModal이 열린다. */}
       {modalOpen && (
-        // movie 정보를 넣어줌
         <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
       )}
     </section>
