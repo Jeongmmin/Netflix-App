@@ -46,24 +46,42 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
       <div className="slider">
         <Swiper
           loop={true} // loop 기능을 사용할 것인지
-          breakpoints={{
-            1378: {
-              slidesPerView: 8, // 한번에 보이는 슬라이드 개수
-              slidesPerGroup: 8, // 몇개씩 슬라이드 할지
+          // breakpoints={{
+          //   1378: {
+          //     slidesPerView: 8, // 한번에 보이는 슬라이드 개수
+          //     slidesPerGroup: 8, // 몇개씩 슬라이드 할지
+          //   },
+          //   998: {
+          //     slidesPerView: 5,
+          //     slidesPerGroup: 5,
+          //   },
+          //   768: {
+          //     slidesPerView: 4,
+          //     slidesPerGroup: 4,
+          //   },
+          //   0: {
+          //     slidesPerView: 3,
+          //     slidesPerGroup: 3,
+          //   },
+          // }}
+          breakpoints= {{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 20
             },
-            998: {
-              slidesPerView: 5,
-              slidesPerGroup: 5,
-            },
-            768: {
-              slidesPerView: 4,
-              slidesPerGroup: 4,
-            },
-            0: {
+            // when window width is >= 480px
+            480: {
               slidesPerView: 3,
-              slidesPerGroup: 3,
+              spaceBetween: 30
             },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 4,
+              spaceBetween: 40
+            }
           }}
+          slidesPerView={8}
           spaceBetween={20}
           freeMode={true}
           modules={[FreeMode, Navigation]}
