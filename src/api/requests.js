@@ -20,13 +20,3 @@ export default requests;
 
 
 
-
-
-
-
-
-//<a class="no_click" href="/discover/movie?with_genres=9648">미스터리</a> 
-//<a class="no_click" href="/discover/movie?with_genres=18">드라마</a> 
-
-// fetchMystery: "/discover/movie?with_genres=9648",
-// fetchDrama: "/discover/movie?with_genres=18",

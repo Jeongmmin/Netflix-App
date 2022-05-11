@@ -98,13 +98,11 @@ export default function Nav() {
   }, []);
 
   const handleChange = (e) => {
-    // search Input의 value를 입력할 때 마다 navigate에 자동으로 입력되게 설정
     setSearchValue(e.target.value);
     navigate(`/search?q=${e.target.value}`);
   };
 
   return (
-    // show가 true일 때는 nav만 false 일 때는 nav__black도 적용
     <NavWrapper show={show}>
       <Logo onClick={() => (window.location.href = "/Netflix-App/")} />
       <MenuWrapper>

@@ -1,13 +1,10 @@
 // rfce
 import React, { useRef } from "react";
 
-// closeOverlay hooks 추가
 import { useCloseOverlay } from "../../hooks/useCloseOverlay";
 import "./MovieModal.css";
 
-// const MatchScore = Math.floor(Math.random()*100);
 
-// props 가져오기
 function MovieModal({
   backdrop_path,
   title,
