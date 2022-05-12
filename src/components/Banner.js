@@ -5,6 +5,38 @@ import requests from "../api/requests";
 import "./Banner.css";
 import styled from 'styled-components';
 
+const Iframe = styled.iframe`
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    border: none;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+`;
+    
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+`;
+
+const HomeContainer = styled.div`
+    width: 100%;
+    height: 100%;
+`;
+
+
 export default function Banner( { fetchUrl }) {
 
     const [movie, setMovie] = useState([]);
@@ -74,13 +106,10 @@ export default function Banner( { fetchUrl }) {
                     🎬 재생
                     </button>
                     <button className="banner__button info" onClick={() =>handleClick(movie)} key={movie.id}>
-                        {/* <div className="space"></div> 📍 상세 정보 */}
                         📍 상세 정보
                     </button>
-                    {/*modal이 열리면 MovieModal이 열린다. */}
                     {
                     modalOpen && (
-                        // movie 정보를 넣어줌
                         <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
                         )   
                     }
@@ -89,7 +118,6 @@ export default function Banner( { fetchUrl }) {
                 <h1 className="banner__description">
                     {truncate(movie.overview, 100)}
                 </h1>
-                {/**Description */}
             </div>
             <div className="banner--fadeBottom" />    
         </header>
@@ -115,34 +143,3 @@ export default function Banner( { fetchUrl }) {
     }
     
 }
-// opacity: 0.65;
-const Iframe = styled.iframe`
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    
-    border: none;
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-`;
-    
-const Container = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-`;
-
-const HomeContainer = styled.div`
-    width: 100%;
-    height: 100%;
-`;

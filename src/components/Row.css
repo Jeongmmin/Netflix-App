@@ -109,15 +109,6 @@ body {
   margin: 10px;
 }
 
-/* @media screen and (min-width: 1200px) {
-  .row__poster {
-    max-height: 160px;
-  }
-
-  .row__posterLarge {
-    max-height: 360px;
-  }
-}*/
 
 @media screen and (max-width: 768px) {
   .row {
